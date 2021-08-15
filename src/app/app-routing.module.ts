@@ -4,10 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 //componentes
 import { AppComponent } from './app.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 const routes: Routes = [
   {path: '', 
-  component: AppComponent,
+  component: MainPageComponent,
   children : [
     
   ]}
