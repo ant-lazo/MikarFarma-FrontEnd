@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ClientesComponent } from './clientes.component';
 import { ClientesRoutingModule } from './clientes-routing.module';
 
+
 @NgModule({
   declarations: [
     ClientesComponent

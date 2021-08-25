@@ -13,6 +13,9 @@ import { ProductosComponent } from './main-page/productos/productos.component';
 import { VentasComponent } from './main-page/ventas/ventas.component';
 import { ComprasComponent } from './main-page/compras/compras.component';
 
+//probando integracion de cors
+import {HttpClientModule} from '@angular/common/http';
+import { Error404Component } from './main-page/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,14 @@ import { ComprasComponent } from './main-page/compras/compras.component';
     //ClientesComponent,
     ProductosComponent,
     VentasComponent,
-    ComprasComponent
+    ComprasComponent,
+    Error404Component
   ],
   imports: [
     CommonModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ]
 })
 export class PagesModule { }

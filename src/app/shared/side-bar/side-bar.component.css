@@ -2,3 +2,20 @@
     background: #eeeeee !important;
 }
 
+/* Simulacion aqui en este css no funciona se modifico en el archivo css verdadero
+en el OverlayScrollbars.mim.css */
+
+.os-theme-light>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+    /*background: rgba(255, 255, 255, .4)*/
+    background: rgba(108, 117, 125, 0.4)
+}
+
+.os-theme-light>.os-scrollbar:hover>.os-scrollbar-track>.os-scrollbar-handle {
+    /*background: rgba(255, 255, 255, .55)*/
+    background: rgba(108, 117, 125, 0.55)
+}
+
+.os-theme-light>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle.active {
+    /*background: rgba(255, 255, 255, .7)*/
+    background: rgba(108, 117, 125, 0.7)
+}
