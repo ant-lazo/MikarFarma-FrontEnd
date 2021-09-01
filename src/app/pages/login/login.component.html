@@ -20,7 +20,10 @@
                class="form-control"
                placeholder="Usario"
                formControlName="username"
+               name="username"
+               id="username"
                [ngClass]="{'is-invalid': invalidField('username')}"
+               autofocus
                >
 
               <div class="input-group-append">
@@ -39,8 +42,10 @@
                class="form-control"
                placeholder="Contraseña"
                formControlName="password"
+               name="password"
+               id="password"
                [ngClass]="{'is-invalid': invalidField('password')}"
-              >
+               >
 
               <div class="input-group-append">
                 <div class="input-group-text">
