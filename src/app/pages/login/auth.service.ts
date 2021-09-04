@@ -26,7 +26,7 @@ export class AuthService {
 
   //metodo para capturar el token y guardarlo al sessionStorage
   public get token(): string {
-    if(this._token!= null){
+    if(this._token != null){
       return this._token;
     } else if(this._token == null && sessionStorage.getItem('token')!= null){
       this._token = sessionStorage.getItem('token') as string;
@@ -68,13 +68,15 @@ export class AuthService {
   }
 
   obtenerDatosToken(accessToken: string):any{
-    if(accessToken != null ){
-      //hay eror en la condicion
-      return JSON.parse(window.atob(accessToken.split(".")[1]));
+    if(accessToken != "No hay token"){
+      //hay eror en la condicion, ya se arreglo jeje
+      console.log(accessToken);
+      return JSON.parse(decodeURIComponent(atob(accessToken.split(".")[1])));
     }
     return null;
   }
 
+  //para redirigir al login cuando da retroceder
   isAuthenticated(): boolean{
     let payload =this.obtenerDatosToken(this.token);
     if(payload != null && payload.user_name && payload.user_name.length>0){
@@ -84,7 +86,7 @@ export class AuthService {
   }
 
   logout(): void{
-    this._token= "";
+    this._token= "No hay token";
     this._usuario=new Usuario();
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('usuario');

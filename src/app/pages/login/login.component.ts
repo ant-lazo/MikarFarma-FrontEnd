@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   usuario: Usuario;
 
   //Para validar el envio del formulario
-
   formSubmitted = false;
 
   constructor(private form: FormBuilder, private authService: AuthService, private router: Router) {
@@ -36,8 +35,16 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    //para redirigir al login cuando retrocede
     if(this.authService.isAuthenticated()){
-      Swal.fire('Login', `Hola ${this.authService.usuario.nombre} ya estás authenticado(a)`, 'info')
+      Swal.fire({
+        position: 'top-end',
+        icon: 'info',
+        title: `Hola ${this.authService.usuario.nombre} ya estás authenticado(a), cierra sesion`,
+        showConfirmButton: false,
+        timer: 1500
+      })
+      //Swal.fire('No puedes retrocer', `Hola ${this.authService.usuario.nombre} ya estás authenticado(a), cierra sesion`, 'info')
       this.router.navigate(['/']);
     }
   }

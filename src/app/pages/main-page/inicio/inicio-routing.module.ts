@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio.component';
 
 const routes: Routes = [
+  // enrutamos el component inicio
   {path: '', component: InicioComponent}
 ];
 
@@ -19,4 +20,5 @@ const routes: Routes = [
     RouterModule
   ]
 })
+// nombramos el routingMdoule
 export class InicioRoutingModule { }

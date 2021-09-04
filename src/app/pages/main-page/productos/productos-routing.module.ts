@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 //componentes
-import { ClientesComponent } from './clientes.component';
+import { ProductosComponent } from './productos.component';
 
 const routes: Routes = [
-  //enrutamos el componente
-  {path: 'clientes', component: ClientesComponent}
+  // enrutamos el component productos
+  {path: 'productos', component: ProductosComponent}
 ];
 
 @NgModule({
@@ -20,5 +20,5 @@ const routes: Routes = [
     RouterModule
   ]
 })
-//nombramos el routingModule
-export class ClientesRoutingModule { }
+// nombramos el routingMdoule
+export class ProductosRoutingModule { }

@@ -29,7 +29,7 @@ export class SideBarComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/login']);
     //averiguar codigo para recargar pagina (falta porque asi no funciona bien)
-    
+    console.log(this.authService.token);
   }
 
 }
