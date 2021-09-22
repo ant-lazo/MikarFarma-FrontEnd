@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-table-container{
+    position: relative;
+    /*max-height: 400px;*/
+    overflow: auto;
+}
+
+.matTable-table {
+    width: 100%;
+}
+
+tr.example-detail-row {
+    height: 0 !important;
+}
+
+.example-element-row td {
+    border-bottom-width: 0 !important;
+  }
+
+.example-element-detail {
+    overflow: hidden !important;
+    display: flex !important;
+  }
+/*para recortar el texto con 3 puntos al final*/
+td.mat-cell{
+    max-width: 210px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+
+
+div.textotrespuntos{
+    max-width: 170px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+.custom-dialog-container .mat-dialog-container {
+    width: 550px;
+}
+
+
+

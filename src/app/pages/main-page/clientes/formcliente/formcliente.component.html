@@ -1,0 +1,72 @@
+
+<div mat-dialog-content>
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title mb-0"><b>Nuevo Cliente</b></h3>
+        </div>
+
+        <form
+        autocomplete="off"
+        [formGroup]="f"
+        (ngSubmit)="guardarCliente()"
+        >
+            <div class="card-body">
+
+                <!-- Nombre -->
+                <div class="form-group">
+                    <label for="InputNombre">Nombre</label>
+                    <input type="text" id="InputNombre" class="form-control" placeholders="Nombre"
+                    formControlName="nombre"
+                    [ngClass]="{'is-invalid': invalidField('nombre') || nombre.invalid && nombre.errors?.pattern }">
+                    <span class="invalid-feedback"
+                    *ngIf="nombre.invalid && nombre.errors?.required">Ingrese el nombre del cliente</span>
+                    <span class="invalid-feedback"
+                    *ngIf="nombre.invalid && nombre.errors?.pattern">No se permiten números ni cáracteres especiales</span>
+                </div>
+
+                <!-- Apellido -->
+                <div class="form-group">
+                    <label for="InputApellido">Apellido</label>
+                    <input type="text" id="InputApellido" class="form-control" placeholders="Apellido"
+                    formControlName="apellido"
+                    [ngClass]="{'is-invalid': invalidField('apellido') || apellido.invalid && apellido.errors?.pattern }">
+                    <span class="invalid-feedback"
+                    *ngIf="apellido.invalid && apellido.errors?.required">Ingrese el apellido del cliente</span>
+                    <span class="invalid-feedback"
+                    *ngIf="apellido.invalid && apellido.errors?.pattern">No se permiten números ni cáracteres especiales</span>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="InputEmail">Email</label>
+                    <input type="text" id="InputEmail" class="form-control" placeholders="Email"
+                    formControlName="email"
+                    [ngClass]="{'is-invalid': invalidField('email') 
+                    || email.invalid && email.errors?.emailrepetido 
+                    || email.invalid && email.errors?.email }">
+                    <span class="invalid-feedback"
+                    *ngIf="email.invalid && email.errors?.email">ingrese correctamente el email</span>
+                    <span class="invalid-feedback"
+                    *ngIf="email.invalid && email.errors?.emailrepetido">el correo ya existe en la base de datos</span>
+                
+                </div>
+
+                <!-- Telefono -->
+                <div class="form-group">
+                    <label for="InputTelefono">Telefono</label>
+                    <input type="text" id="InputTelefono" class="form-control" placeholders="Telefono"
+                    formControlName="telefono"
+                    [ngClass]="{'is-invalid': invalidField('telefono') || telefono.invalid && telefono.errors?.pattern }">
+                    <span class="invalid-feedback"
+                    *ngIf="telefono.invalid && telefono.errors?.pattern">Ingrese el telefono del cliente correctamente</span>
+                </div>
+            
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <button mat-dialog-close class="btn btn-danger float-right">Cerrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
